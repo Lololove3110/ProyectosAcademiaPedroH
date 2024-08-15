@@ -4,5 +4,5 @@
 /**
  * 
  */
-module semana1 {
+module bancojava {
 }
