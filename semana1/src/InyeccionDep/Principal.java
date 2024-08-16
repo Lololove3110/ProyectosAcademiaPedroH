@@ -1,5 +1,10 @@
 package InyeccionDep;
 
+/*
+En esta clase decido determinar la inyeccion dependiendo del valor de la lista
+de ingresos. El ingreso pertenece a un cliente y finalmente semuestra 
+que tipo de tarjeta conseguirá el cliente
+ */
 public class Principal {
 
     public static void main(String[] args) {
