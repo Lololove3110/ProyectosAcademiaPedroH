@@ -3,15 +3,18 @@ package singleton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-// Clase Singleton que controla la lógica del juego de tirar dados
+/*La clase de singleton permite que multiples jugadores puedan 
+ * ingresar a la partida y se les asigne un numero sin necesidad de 
+ * crear nuevos objetos. Todo lo hace a partir de un array
+ * 
+ */
 public class JuegoDeDados {
-    // Única instancia de la clase (Singleton)
+    // Aqui se crea el singleton
     private static JuegoDeDados instancia;
     // Lista de jugadores que participan en el juego
     private List<Jugador> jugadores;
 
-    // Constructor privado para evitar la creación de múltiples instancias
+    //Evitamos que no suceda la creacion de multiples instancias y que todo apunte al singleton
     private JuegoDeDados(int numeroDeJugadores) {
         jugadores = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +27,7 @@ public class JuegoDeDados {
         }
     }
 
-    // Método estático para obtener la única instancia de la clase
+    // Aqui se aplica el singleton para obtener una unica instancia de clase
     public static JuegoDeDados getInstancia(int numeroDeJugadores) {
         if (instancia == null) {
             instancia = new JuegoDeDados(numeroDeJugadores);
@@ -32,7 +35,7 @@ public class JuegoDeDados {
         return instancia;
     }
 
-    // Método que controla el flujo principal del juego
+    // Aqui se asigna un dado a cada jugador y se guardan los puntos
     public void jugar() {
         Dado dado = new Dado();
         for (Jugador jugador : jugadores) {
@@ -43,7 +46,7 @@ public class JuegoDeDados {
         mostrarGanador();
     }
 
-    // Método privado para determinar y mostrar el ganador del juego
+    // Este método compara todos los jugadores y saca el ganador con mayor puntaje
     private void mostrarGanador() {
         Jugador ganador = jugadores.get(0);
         for (Jugador jugador : jugadores) {
@@ -54,11 +57,11 @@ public class JuegoDeDados {
         System.out.println("El ganador es " + ganador.getNombre() + " con " + ganador.getPuntaje() + " puntos.");
     }
 
-    // Método principal para ejecutar el juego
+    // Metodo principal para ejecutar el juego
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Solicita al usuario el número de jugadores
+        // Se pide el numero de jugadores
         System.out.print("Ingrese el número de jugadores: ");
         int numeroDeJugadores = scanner.nextInt();
         scanner.nextLine();  // Limpia el buffer de entrada
