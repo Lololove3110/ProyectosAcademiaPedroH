@@ -10,11 +10,15 @@ public class Principal {
         Mago mago = new Mago();
         Dragon dragon = new Dragon();
 
-        // Realizar ataques y mostrar la vida restante
+        //Primero ataca el personaje y luego el dragon y así hasta que se acaba
+          
+      
+    
+        //Realiza ataca el personaje muestra la vida restante
         guerrero.atacar(dragon);
         System.out.println("Vida del Dragón: " + dragon.getPuntosDeVida());
         
-     // Ataques del Dragón
+        // Ataques del Dragón
         dragon.atacar(guerrero);
         System.out.println("Vida del Guerrero: " + guerrero.getPuntosDeVida());
 
