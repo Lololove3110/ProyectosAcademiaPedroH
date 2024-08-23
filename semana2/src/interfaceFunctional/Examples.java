@@ -150,9 +150,66 @@ public class Examples {
 		System.out.println("****");
 		System.out.println("BiFunction");
 		//7.- BiFunction
+		//concat
+		BiFunction<String,String,String> concatStr = (str1,str2) -> str1.concat(str2);
+		System.out.println("Concat ¨para¨, ¨meter¨: "+ concatStr.apply("para", "meter"));
+		//take two str numbers, converts to int and add them
+		BiFunction<String,String,Integer> sumOfStr = (n1,n2) -> Integer.parseInt(n1)+Integer.parseInt(n2);
+		System.out.println("Str 40 and 55 added are: "+sumOfStr.apply("40", "55"));
+		//add a number to a len
+		BiFunction<String, Integer, Integer> addToLen = (str, num) -> str.length() + num;
+		System.out.println("Add a number to a len of a word ¨java¨"+addToLen.apply("Java", 5));
+		//Max between two numbers
+		BiFunction<Integer,Integer,Integer> max = (a,b) -> Math.max(a,b);
+		System.out.println("Max between two numbers: 20,40: "+max.apply(20, 40));
+		
+		System.out.println("****");
+		System.out.println("UnaryOperator");
+		//8.-UnaryOperator
+		//increment n + 1
+		UnaryOperator<Integer> Increment = n ->  n + 1;
+		System.out.println("increment n(6) + 1"+Increment.apply(6));
+		//getting absolute value
+		UnaryOperator<Integer> abs = n -> Math.abs(n);
+		System.out.println("The absolute value of -12 is: " + abs.apply(-12));
+		//returning a square root
+		UnaryOperator <Double> sqrt = n -> Math.pow(n, 0.5);
+		System.out.println("The square root of 2 is: "+sqrt.apply(2.0));
+		//Reversing a string
+		UnaryOperator <String> reversed = str -> new StringBuilder(str).reverse().toString();
+		System.out.println("Java revered is: "+reversed.apply("Java"));
+		//9.- BinaryOperator
+		System.out.println("****");
+		System.out.println("BinaryOperator");
+		//Longest string
+		BinaryOperator<String> longestStr = (str1,str2) -> str1.length() >= str2.length() ? str1:str2;
+		System.out.println("The longest word between Java and Python is: "+longestStr.apply("Java", "Python"));
+		//Concat
+		BinaryOperator<String> ConcatBIop = (str1,str2) ->str1.concat(str2);
+		System.out.println("Concat ¨sol¨, ¨ution¨: "+ConcatBIop.apply("sol","ution"));
+		//multipy
+		BinaryOperator <Integer> multBiOp = (n1,n2) -> n1 * n2;
+		System.out.println("5 * 98 = " +multBiOp.apply(5, 98));
+		//Testing bool
+		BinaryOperator<Boolean> testBool = (b1,b2) -> b1 && b2;
+		System.out.println("Testing: True,True: "+testBool.apply(true, true)+" Testing: True,False "+testBool.apply(true, false));
+
+		
+ 
+		
+
 		
 		
 		
+
+
+
+	
+
+
+
+		
+
 	}
 	
 	
