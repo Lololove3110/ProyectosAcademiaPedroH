@@ -31,7 +31,7 @@ public class Principal {
 	};
 	public static void main(String[] args) {
 
-        System.out.println("Estudiantes Procesados Funcionalmente");
+        System.out.println("Estudiantes fuera del filtro");
 
         List<Estudiante> listaEstudiantes = Arrays.stream(arrayOfEstudiantes)
                 // 1. Filtrar estudiantes con promedio menor a 65 en ambos periodos
