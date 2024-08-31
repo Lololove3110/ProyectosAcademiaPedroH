@@ -1,4 +1,4 @@
-package Decorator;
+package DecoratorWithTest;
 
 public abstract class ToppingDecorator implements Component{
 	

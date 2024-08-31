@@ -1,4 +1,4 @@
-package Decorator;
+package DecoratorWithTest;
 
 public class Principal {
 	public static void main(String[] args) {
@@ -23,20 +23,18 @@ public class Principal {
         
     }
 
-    // Helper method to calculate and print cost with discount if applicable
-    private static void printCostWithDiscount(Component burger) {
+	public static void printCostWithDiscount(Component burger) {
         System.out.println(burger.getNameAndPrice());
+        double totalCost = calculateTotalCostWithDiscount(burger.getTotalCost());
+        System.out.println("Total cost: $" + totalCost);
+    }
 
-        // Calculate the total cost
-        double totalCost = burger.getTotalCost();
-
-        // Apply a 10% discount if the cost is more than $16
+    // Public method to calculate total cost with discount
+    public static double calculateTotalCostWithDiscount(double totalCost) {
         if (totalCost > 16) {
             totalCost *= 0.90;
-            System.out.println("Discount applied! New total cost: $" + totalCost);
-        } else {
-            System.out.println("Total cost: $" + totalCost);
         }
+        return totalCost;
     }
 }
 

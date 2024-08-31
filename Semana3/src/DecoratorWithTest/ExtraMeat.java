@@ -1,4 +1,4 @@
-package Decorator;
+package DecoratorWithTest;
 
 public class ExtraMeat extends ToppingDecorator {
 
