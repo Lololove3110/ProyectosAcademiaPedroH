@@ -5,3 +5,5 @@ public interface Component {
 	double getTotalCost();
 
 }
+
+

@@ -1,8 +1,6 @@
 package builder;
 
 public class Director {
-	
-	
 	public void makePlayer1(Builder builder) {
 		builder.born();
 		builder.buildGift();
@@ -17,8 +15,6 @@ public class Director {
 		builder.buildHP(500);
 		builder.buildRace(new Draconian());
 	}
-	
-
 }
 class Draconian extends Race{
 	@Override

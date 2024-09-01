@@ -21,20 +21,14 @@ public class Principal {
 		System.out.println("Action 3: ");
 		player1.detach(new Eat("Banana",player1));
 		new ComboAtack("punch, kick, kick", player1);
-		player1.action();
+		player1.action();	
+	
 		System.out.println("---------------");
 		System.out.println("Action 4: ");
 		player1.detach(new ComboAtack("punch, kick, kick", player1));
 		player1.detach(new ComboAtack("kick,punch,punch", player1));
 		new Eat("Burger",player1);
 		new Eat("Ribs",player1);
-		player1.action();
-
-		
-		
-		
-	}
-		
-
-		
+		player1.action();	
+	}		
 }

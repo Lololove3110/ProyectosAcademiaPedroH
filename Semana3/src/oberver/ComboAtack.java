@@ -4,22 +4,17 @@ import java.util.Objects;
 
 public class ComboAtack extends Observer{
 	String comAt;
-
 	public ComboAtack( String comAt,Subject sub) {
 		super(sub);
 		this.comAt = comAt;
 	}
-	
-	void doCombo() {
-		
+	void doCombo() {	
 		System.out.println("Attack!: "+comAt);
 	}
-	
 	@Override
 	public void update() {
 		doCombo();
 	}
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(comAt);
@@ -37,7 +32,4 @@ public class ComboAtack extends Observer{
 		ComboAtack other = (ComboAtack) obj;
 		return Objects.equals(comAt, other.comAt);
 	}
-	
-	
-	
 }
